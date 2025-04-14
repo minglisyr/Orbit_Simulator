@@ -2,7 +2,6 @@ def main():
     import math
     import matplotlib.pyplot as plt
     import numpy as np
-    import bpy
 
     __author__ = 'LI, MING'
     z = int(864000)
@@ -348,18 +347,18 @@ def main():
      + 'temp_Stamina_x_list = ' + str(temp_Stamina_x_list) + '\n' \
      + 'temp_Stamina_y_list = ' +  str(temp_Stamina_y_list) + '\n')    
     
-    bpy.data.scenes["Scene"].frame_current = 0
-    for n in range(int(z/500)):
-        bpy.ops.anim.keyframe_insert_menu(type='Location')
-        bpy.data.objects["Moon"].location[0] = temp_Moon_x_list[n]
-        bpy.data.objects["Moon"].location[1] = temp_Moon_y_list[n]
-        bpy.data.objects["CameraMoon"].location[0] = temp_Moon_x_list[n]
-        bpy.data.objects["CameraMoon"].location[1] = temp_Moon_y_list[n]
-        bpy.data.objects["CameraStamina"].location[0] = temp_Stamina_x_list[n]
-        bpy.data.objects["CameraStamina"].location[1] = temp_Stamina_y_list[n]
-        bpy.data.objects["Stamina"].location[0] = temp_Stamina_x_list[n]
-        bpy.data.objects["Stamina"].location[1] = temp_Stamina_y_list[n]
-        bpy.data.scenes["Scene"].frame_current += 1
+    # bpy.data.scenes["Scene"].frame_current = 0
+    # for n in range(int(z/500)):
+    #     bpy.ops.anim.keyframe_insert_menu(type='Location')
+    #     bpy.data.objects["Moon"].location[0] = temp_Moon_x_list[n]
+    #     bpy.data.objects["Moon"].location[1] = temp_Moon_y_list[n]
+    #     bpy.data.objects["CameraMoon"].location[0] = temp_Moon_x_list[n]
+    #     bpy.data.objects["CameraMoon"].location[1] = temp_Moon_y_list[n]
+    #     bpy.data.objects["CameraStamina"].location[0] = temp_Stamina_x_list[n]
+    #     bpy.data.objects["CameraStamina"].location[1] = temp_Stamina_y_list[n]
+    #     bpy.data.objects["Stamina"].location[0] = temp_Stamina_x_list[n]
+    #     bpy.data.objects["Stamina"].location[1] = temp_Stamina_y_list[n]
+    #     bpy.data.scenes["Scene"].frame_current += 1
     
     def graph_Common_Settings():
         plt.xlim(xmin=0)
